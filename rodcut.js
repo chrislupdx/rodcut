@@ -5,36 +5,8 @@
 //What are the time and spece efficiencies of your algo?
 //what is p
 
-//function extBotUpRodCut(p, n)
-//{
-//    let r = Array(n);
-//    let s = Array(n); 
-//    
-//    //set them empty
-//    for(let i = 0; i < r.length; i++)
-//    {
-//        r[i] = -null;
-//        s[i] = -null;
-//    }
-//    
-//    r[0] = 0;
-//    for (let j = 0; j < n; j++)
-//    {
-//        let q = -null; //should this be infinity
-//        for(let i = 0; i < j; i++) 
-//        {
-//            if(q < (p[i] + r[j - i]))
-//            {
-//                q = p[i] + r[j- i];
-//                s[j] = i;
-//            }
-//            r[j] = q;
-//        }
-//    }
-//    return [r, s];
-//}
-
-function rodCut(p, n)
+//not sure this is memoized
+function btmUprodCut(p, n)
 {
     let r = Array(n);
     for(let i = 0; i < n; i++)
@@ -55,9 +27,15 @@ function rodCut(p, n)
     return r[n]
 }
 
+//optimal rodcut
+
 function printVals(p, n)
 {
     //produce arrays r and s, which hold the values
 }
-//write the outer/inner function
-//rcb([1, 2, 3], 1000);
+
+let p = [1, 2, 3, 4, 5, 2, 1];
+let n = 4;
+
+let answer = btmUprodCut(p, n);
+console.log("answer is ", answer); //currently unedefined
